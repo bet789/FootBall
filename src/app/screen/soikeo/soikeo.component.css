@@ -1,0 +1,78 @@
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.background{
+    width: 100%;
+    background-color: #141417;
+    /* background: url("/assets/background.png") no-repeat center center; */
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: Roboto;
+}
+#div-con{
+    margin: 0 auto;
+    width: 1200px;
+}
+.div1{
+    background-color: rgba(84, 84, 84, 0.9);
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    font-weight: 750;
+    padding-top: 10px;
+    margin: 15px 0 10px 0;
+    font-size: 20px;
+}
+.div4{
+    
+    margin-top: 10px;
+    width: 100%;
+    text-align: left;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(19, 18, 18, 0.9);  
+    padding-bottom: 20px;
+}
+.wrap3{
+    background-color: rgba(84, 84, 84, 0.5);
+    width: 352px;
+    height: 320px;
+    border-radius: 10px;
+    margin:20px 0 0 33px;
+}
+.div2{ 
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.pagi{
+    margin-left: 34%;
+}
+
+
+@media screen and (max-width: 768px) {
+    #div-con{
+        width: 100%;
+       
+    }
+    .wrap3{
+        margin:5px auto;
+    }
+    .pagi{
+        margin-left: 20%;
+    }
+}

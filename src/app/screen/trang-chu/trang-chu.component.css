@@ -1,0 +1,230 @@
+a{
+    text-decoration: none;
+    /* text-align: center; */
+}
+.background{
+    width: 100%;
+    min-height: 100%;
+    background-color: #141417;
+    /* background: url("/assets/background.png") no-repeat center center; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: Roboto;
+}
+#div-con{
+    margin: 0 auto;
+    width: 1200px;
+}
+#div-con2{
+    margin: 10px auto;
+    width: 1200px;
+}
+.div2{   
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap; 
+    padding: 0 34px;
+}
+.div2 a img{
+    margin: 5px;
+}
+.div1{
+    background-color: rgba(84, 84, 84, 0.9);
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    font-weight: 750;
+    padding-top: 10px;
+    margin: 15px 0 10px 0;
+    font-size: 20px;
+}
+
+#divlistm{
+    display: flex;
+}
+select{
+    width: 24%;
+    border-radius: 5px;
+    height: 40px;
+    background-color: rgba(84, 84, 84, 0.9);
+    color: white;
+}
+.bar2{
+    width: 70%;
+    height: 40px;
+    background-color: rgba(84, 84, 84, 0.9);
+    border-radius: 5px;
+    margin-right: 20px;
+    display: flex;
+}
+.bar2 a{
+    margin:12px 20px;
+    /* font-family: Roboto; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 16px;
+    color: white;
+}
+.bar2 a:hover{
+    color: orange;
+}
+.div3{   
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+.wrap2{
+    background: url('/assets/images/match-even.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;;
+    width: 45%;
+    min-height: 250px;
+    border-radius: 10px;
+    margin:20px 0 0 33px;
+}
+#divtt{
+    width: 300px;
+}
+#divtt2{
+    width: 150px;
+    display: inline;
+}
+.btnreadmore{
+    margin-left: 91%;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding-top: 10px;
+}
+.title{
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    background-color: rgb(10, 155, 10);
+    border-radius: 5px;
+    margin-left: 17%;
+}
+.title:hover{
+    background-color: rgb(12, 129, 12);
+}
+#att{
+    margin-left: 38%;
+}
+.div4{   
+    margin-top: 10px;
+    width: 100%;
+    text-align: left;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(19, 18, 18, 0.9);  
+    padding-bottom: 20px;
+}
+.wrap3{
+    background-color: rgba(84, 84, 84, 0.5);
+    width: 352px;
+    height: 320px;
+    border-radius: 10px;
+    margin:20px 0 0 40px;
+}
+#divvideo{
+    display: flex;
+    background: url('/assets/images/bg-highlight.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    width: 100%;
+    height: 700px;
+}
+#videoGT{
+    width: 780px;
+}
+.divttvd{
+    color: white;
+    background: rgba(84, 84, 84, 0.8);
+    padding: 20px;
+}
+.titlea{
+    color: white;
+    font-size: 20px;
+}
+.titlea:hover{
+    color: orange;
+
+}
+
+@media screen and (max-width: 768px) {
+    
+    #div-con{
+        width: 100%;
+        margin: 0 auto;
+    } 
+    .div1{
+        padding-bottom: 10px;
+        width: 100%;
+        height: auto;
+    }
+    #divlistm{
+        display: inline;
+    }
+    .bar2{
+        width: 100%;
+    }
+    .bar2 a{
+        margin:auto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 16px;
+        color: white;
+    }
+    select{
+        margin: 10px 40px;
+        width: 76%;
+    }
+    .btnreadmore{
+        margin-left: 70%;
+        font-size: 14px;
+    }
+    .div3{   
+        display: inline;
+        padding-bottom: 10px;
+    }
+    .wrap2{
+        width: 98%;
+        min-height: 250px;
+        margin:20px 2px 0 2px;
+        padding-bottom: 10px;
+    }
+    #divtt{
+        margin-top: 10px;
+        width: 180px;
+    }
+    #divtt2{
+        width: 80px;
+    }
+    .title{
+        margin-left: 10%;
+    }
+    #att{
+        margin-left: 40%;
+    }
+    .wrap3{
+        margin:5px auto;
+    }
+}

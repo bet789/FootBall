@@ -1,0 +1,38 @@
+<block-ui>
+    <div class="background">
+        <app-header></app-header>
+        <div id="div-con">
+            <div class="div4">
+                <div id="divnd">
+                    <h1 style="font-size: 30px; color: #33bee7;" >{{prediction.title}}</h1>
+                    <p><strong>{{prediction.subtitle}}</strong></p>
+                    <div [innerHtml]="prediction.content"></div>
+                    <p *ngFor="let tag of prediction.tags" >{{tag.name}}</p>
+                    <div id="divqc" [innerHtml]="getShortCode(prediction.shortcode?.content)"></div>
+                </div>
+    
+                <div id="divnd2">
+                    <h2>BÀI VIẾT LIÊN QUAN</h2>
+                    <div *ngFor="let prediction of relativePredictions" style="display: flex;">       
+                        <a href="/soi-keo/{{prediction.slug}}">
+                            <img style="width: 200px;" src={{prediction.image}} alt={{prediction.title}}>
+                        </a>
+                        <a style="margin-left: 5px;" href="/soi-keo/{{prediction.slug}}">
+                            {{prediction.title}}
+                        </a>
+                    </div>
+                    
+                    <div style="width: 100%;display: flex; flex-wrap: wrap; margin-top: 15px;">
+                        <p *ngFor="let t of postTags" style="margin: 5px; border: 1px solid white; padding: 5px; border-radius: 5px;">
+                            <a href="/tags/{{t.tag.nameNoSign}}">{{ t.tag.name }}</a>
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+    
+            
+        </div>
+        <app-footer></app-footer>
+    </div>
+</block-ui>

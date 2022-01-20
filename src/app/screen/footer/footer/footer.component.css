@@ -1,0 +1,70 @@
+#divvideo{
+    width: 100%;
+    height: 440px;
+    background: url("/assets/images/bg-footer.png") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#div-con{
+    margin: 0 auto;
+    width: 1200px;
+}
+.divtt{
+    display: flex; padding: 40px 120px; border-bottom: 1px solid white;font-family: Roboto;
+}
+#imglogo{
+    width: 250px;
+}
+#title{
+    color: white;
+    margin: 0 70px;
+    font-size: 20px;
+    text-align: justify;
+}
+.divp{
+    color: white; font-size: 18px; text-align: center;font-family: Roboto;
+}
+#h2tt{
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+}
+#divlogo div img{
+    width: 125px;
+}
+@media screen and (max-width: 768px) {
+    #divvideo{
+        height: auto;   
+    }
+    .divtt{
+        display: inline;
+        padding: 0;
+    }
+    #div-con{
+        width: 100%;
+       
+    }
+    #imglogo{
+        width: 70%;
+        margin: 2px 15%;
+    }
+    #title{
+        color: white;
+        margin: 10px 15px;
+        font-size: 20px;
+    }
+    #divlogo{
+        
+        margin: 10px 15%;
+    }
+    .divp{
+        font-size: 14px;
+        padding: 10px 0;
+        border-top: 1px solid white;
+    }
+    #divlogo div img{
+        width: 50%;
+    }
+}

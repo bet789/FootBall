@@ -1,0 +1,15 @@
+.background{
+    width: 100%;
+    min-height: 100%;
+    background-color: #141417;
+    /* background: url("/assets/background.png") no-repeat center center; */
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: Roboto;
+}

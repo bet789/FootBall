@@ -1,0 +1,58 @@
+#divvideo{
+    width: 100%;
+    height: 700px;
+    background: url("/assets/images/bg-highlight.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#videoGT{
+    width: 780px;
+}
+.divttvd{
+    color: white;
+    background: rgba(84, 84, 84, 0.8);
+    padding: 20px;
+}
+#div-con{
+    margin: 0 auto;
+    width: 1200px;
+    display: flex;
+    height: 430px;
+}
+#div-con2{
+    margin: 0 auto;
+    width: 1200px;
+    display: flex;
+    height: 55px;
+}
+.div1{
+    background-color: rgba(84, 84, 84, 0.9);
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    font-weight: 750;
+    padding-top: 10px;
+    margin: 15px 0 10px 0;
+    font-size: 20px;
+}
+@media screen and (max-width: 768px) {
+    #div-con{
+        width: 100%;
+        margin-top: 325px;
+        display: inline;
+    }
+    #videoGT{
+        width: 95%;
+        margin-left: 10px;
+    }
+    .divttvd{
+        margin: 0 10px;
+    }
+    #div-con2{
+        width: 100%;
+    }
+}

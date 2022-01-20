@@ -1,0 +1,35 @@
+<block-ui>
+    <div class="background">
+        <app-header></app-header>
+        <div id="div-con">
+            <div class="div4">
+                <div id="divnd">
+                    <h1 style="font-size: 30px; color: #33bee7">{{ news.title }}</h1>
+                    <p><strong>{{ news.subtitle }}</strong></p>
+                    <div [innerHtml]="news.content"></div>
+                    <p *ngFor="let tag of news.tags">{{ tag.name }}</p>
+                    <div id="divqc" [innerHtml]="getShortCode(news.shortcode?.content)"></div>
+                </div>
+    
+                <div id="divnd2">
+                    <h2>BÀI VIẾT LIÊN QUAN</h2>
+                    <div *ngFor="let news of relativeNewses" style="display: flex;">
+                        <a href="/tin-tuc/{{ news.slug }}">
+                            <img style="width: 200px;" class="relativeNews-image" src="{{ news.image }}" alt="{{ news.title }}" />
+                        </a>
+                        <a style="margin-left: 5px;" href="/tin-tuc/{{ news.slug }}">{{ news.title }}</a>
+                    </div>
+    
+                    <div style="width: 100%;display: flex; flex-wrap: wrap; margin-top: 15px;">
+                        <p *ngFor="let t of postTags" style="margin: 5px; border: 1px solid white; padding: 5px; border-radius: 5px;">
+                            <a  href="/tags/{{t.tag.nameNoSign}}">{{ t.tag.name }}</a>
+                          </p>
+                    </div>
+                </div>
+            </div>          
+            
+        </div>
+        <app-footer></app-footer>
+    </div>
+</block-ui>
+

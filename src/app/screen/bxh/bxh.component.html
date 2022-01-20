@@ -1,0 +1,63 @@
+<block-ui>
+    <div class="background">
+        <app-header></app-header>
+        <app-banner></app-banner>
+        <div id="div-con">
+            <div class="div1" style="font-family: Roboto;">BẢNG XẾP HẠNG CẬP NHẬT NHANH NHẤT HÔM NAY <span style="color: limegreen;">(MÙA GIẢI:2021/2022)</span></div>
+    
+            <div class="div4">
+                <p>chọn năm:</p>
+                <select style="width:100px" id="season" [(ngModel)]="season" (change)="onSeasonChange(season)">
+                    <option *ngFor="let s of seasons" value={{s}}>{{s}}</option>
+                </select>
+                <p>chọn quốc gia:</p>
+                <select style="width:250px" id="league" [(ngModel)]="country" (change)="onCountryChange(country)">
+                    <option *ngFor="let c of countries" value={{c.name}}>{{c.name}}</option>
+                </select>
+                <p >chọn giải đấu:</p>
+                <select style="width:150px" id="league" [(ngModel)]="league" (change)="onLeagueChange(league)">
+                    <option *ngFor="let l of leagues" value={{l.league.id}}>{{l.league.name}}</option>
+                </select>
+            </div>
+            <div id="divtable">
+                <table id="customers">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th >Đội bóng</th>
+                            <th>Số trận</th>
+                            <th>Thắng</th>
+                            <th>Hòa</th>
+                            <th>Thua</th>
+                            <th>Bàn thắng</th>
+                            <th>Bàn thua</th>
+                            <th>Hiệu số</th>
+                            <th>Điểm</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let t of rankingData.standings[0]">
+                            <td>{{t.rank}}</td>
+                            <td style="text-align: left;">
+                                <div style="height: 60px; display: flex;">
+                                    <img src={{t.team.logo}} style="width:60px" alt="">
+                                    <p style="margin: 20px;">{{t.team.name}}</p>
+                                </div>
+                            </td>
+                            <td>{{t.all.played}}</td>
+                            <td>{{t.all.win}}</td>
+                            <td>{{t.all.draw}}</td>
+                            <td>{{t.all.lose}}</td>
+                            <td>{{t.all.goals.for}}</td>
+                            <td>{{t.all.goals.against}}</td>
+                            <td>{{t.goalsDiff}}</td>
+                            <td>{{t.points}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>       
+        </div>
+        <app-footer></app-footer>
+    </div>
+    
+</block-ui>

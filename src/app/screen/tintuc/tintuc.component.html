@@ -1,0 +1,22 @@
+<block-ui>
+    <div class="background">
+        <app-header></app-header>
+        <app-banner></app-banner>
+        <div id="div-con">
+    
+            <div class="div1" >TIN TỨC <span style="color: limegreen;">THỂ THAO</span></div>
+            <div class="div4">
+                <div class="wrap3" *ngFor="let news of newses | paginate: { itemsPerPage: 12, currentPage: page, totalItems: totalRecords }">
+                    <a href="/tin-tuc/{{news.slug}}"><img src={{news.image}} style="width: 100%; height: 220px;"></a> 
+                    <div style="margin-left: 10px;"><a href="/tin-tuc/{{news.slug}}" class="titlea">{{news.title}}</a>  </div>           
+                </div>  
+                <div class="div2"><pagination-controls (pageChange)="onPageChange(page = $event)"[autoHide]="true" [responsive]="true" [maxSize]="5" screenReaderPageLabel="page" class="pagi"></pagination-controls></div>
+            </div>
+            
+            
+            
+        </div>
+        <app-footer></app-footer>
+    </div>
+</block-ui>
+

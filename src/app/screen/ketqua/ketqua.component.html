@@ -1,0 +1,74 @@
+<block-ui>
+    <div class="background">
+        <app-header></app-header>
+        <app-banner></app-banner>
+        <div id="div-con">
+            <div class="div1" >CẬP NHẬT KẾT QUẢ NHANH NHẤT HÔM NAY <span style="color: limegreen;">(MÙA GIẢI:2021/2022)</span></div>
+                
+            <div class="div4">
+                <p id='pnam'>chọn năm:</p>
+                <select style="width:100px" id="season" [(ngModel)]="season" (change)="onSeasonChange(season)">
+                    <option *ngFor="let s of seasons" value={{s}}>{{s}}</option>
+                </select>
+                <p>chọn quốc gia:</p>
+                <select style="width:250px" id="league" [(ngModel)]="country" (change)="onCountryChange(country)">
+                    <option *ngFor="let c of countries" value={{c.name}}>{{c.name}}</option>
+                </select>
+                <p>chọn giải đấu:</p>
+                <select style="width:150px" id="league" [(ngModel)]="league" (change)="onLeagueChange(league)">
+                    <option *ngFor="let l of leagues" value={{l.league.id}}>{{l.league.name}}</option>
+                </select>   
+                <div id="divip">
+                    <input type="search" id="myInput" placeholder="Tìm kiếm đội bóng">
+                    <a href="javascript: void(0)" id="iconsearch" ><img src="assets/search.svg" ></a>
+                </div>                     
+            </div>
+            <div id="divtable">
+                <table id="customers">
+                    <thead>
+                        <tr>
+                            <th>Thời gian</th>
+                            <th >Giải đấu</th>
+                            <th>Chủ nhà</th>
+                            <th></th>
+                            <th>Kết quả</th>
+                            <th></th>
+                            <th>Đội khách</th>
+                            <th>Hiệp 1</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let s of scoreData">
+                            <td>{{getDate(s.fixture.timestamp)}}</td>
+                            <td >
+                                <div style="height: 60px; display: flex;">
+                                    <img  src={{s.league.logo}} style="width:60px" alt={{s.league.logo}}>
+                                    <p style="margin: 20px;"> {{s.league.name}}</p>
+                                </div>
+                                
+                            </td>
+                            <td>{{s.teams.home.name}}</td>
+                            <td >
+                                <img src={{s.teams.home.logo}} style="width:60px" alt={{s.teams.home.name}}>
+                            </td>
+                            <td>
+                                <h5>{{s.goals.home}}-{{s.goals.away}}</h5>
+                            </td>
+                            <td>
+                                <img src={{s.teams.away.logo}} style="width:60px" alt="">
+                            </td>
+                            <td>
+                                {{s.teams.away.name}}
+                            </td>
+                            <td>
+                                <h5>{{s.score.halftime.home}}-{{s.score.halftime.away}}</h5>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>       
+        </div>
+        <app-footer></app-footer>
+    </div>
+    
+</block-ui>

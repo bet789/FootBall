@@ -1,0 +1,55 @@
+<block-ui>
+    <div class="background">
+        <app-header></app-header>
+        <app-banner></app-banner>
+        <div id="div-con">
+            <div class="div1" >LỊCH THI ĐẤU BÓNG ĐÁ HÔM NAY VÀ NGÀY MAI MỚI NHẤT</div>
+            <div id="divtable">
+                <table id="customers">
+                    <thead>
+                        <tr>
+                            <th>Thời gian</th>
+                            <th>Giải đấu</th>
+                            <th>Chủ nhà</th>
+                            <th></th>
+                            <th>Kết quả</th>
+                            <th></th>
+                            <th>Đội khách</th>
+                            <th>Hiệp 1</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let s of liveScoreData">
+                            <td>{{getDate(s.fixture.timestamp)}}</td>
+                            <td >
+                                <div style="height: 60px; display: flex;">
+                                    <img  src={{s.league.flag}} style="width:60px" alt={{s.league.country}}>
+                                    <p style="margin: 20px;"> {{s.league.country}}-{{s.league.name}}</p>
+                                </div>                      
+                            </td>
+                            <td>{{s.teams.home.name}}</td>
+                            <td >
+                                <img src={{s.teams.home.logo}} style="width:60px" alt={{s.teams.home.name}}>
+                            </td>
+                            <td >
+                                <p >{{s.fixture.status.long}} <span *ngIf="s.fixture.status.elapsed">({{s.fixture.status.elapsed}}')</span></p>
+                                <h5>{{s.goals.home}}-{{s.goals.away}}</h5>
+                            </td>
+                            <td >
+                                <img src={{s.teams.away.logo}} style="width:60px" alt="">
+                            </td>
+                            <td>
+                                {{s.teams.away.name}}
+                            </td>
+                            <td>
+                                <h5>{{s.score.halftime.home}}-{{s.score.halftime.away}}</h5>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>                      
+        </div>
+        <app-footer></app-footer>
+    </div>
+    
+</block-ui>

@@ -1,0 +1,70 @@
+<block-ui>
+    <div class="background">
+        <app-header></app-header>
+        <app-banner></app-banner>
+        <div id="div-con">
+            <div class="div1" >LỊCH THI ĐẤU BÓNG ĐÁ HÔM NAY VÀ NGÀY MAI MỚI NHẤT</div>
+            <div class="div4">
+                <button class="btn" *ngFor="let l of listDataLeagues" (click)="onLeagueChange(l.id)">{{l.league}}</button>
+            </div>
+            <div class="div4">
+                <p>chọn năm:</p>
+                <select style="width:100px" id="season" [(ngModel)]="season" (change)="onSeasonChange(season)">
+                    <option *ngFor="let s of seasons" value={{s}}>{{s}}</option>
+                </select>
+                <p>chọn quốc gia:</p>
+                <select style="width:250px" id="league" [(ngModel)]="country" (change)="onCountryChange(country)">
+                    <option *ngFor="let c of countries" value={{c.name}}>{{c.name}}</option>
+                </select>
+                <p>chọn giải đấu:</p>
+                <select style="width:150px" id="league" [(ngModel)]="league" (change)="onLeagueChange(league)">
+                    <option *ngFor="let l of leagues" value={{l.league.id}}>{{l.league.name}}</option>
+                </select>  
+            </div>
+
+            <div id="divtable">
+                <table id="customers">
+                    <thead>
+                        <tr>
+                            <th>Thời gian</th>
+                            <th>Giải đấu</th>
+                            <th>Chủ nhà</th>
+                            <th></th>
+                            <th>VS</th>
+                            <th></th>
+                            <th>Đội khách</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let s of scheduleData">
+                            <td>{{getDate(s.fixture.timestamp)}}</td>
+                            <td >
+                                <div style="height: 60px; display: flex;">
+                                    <img  src={{s.league.logo}} style="width:60px" alt={{s.league.country}}>
+                                    <p style="margin: 20px;"> {{s.league.country}}-{{s.league.name}}</p>
+                                </div>      
+                            </td>
+                            <td>{{s.teams.home.name}}</td>
+                            <td >
+                                <img src={{s.teams.home.logo}} style="width:60px" alt={{s.teams.home.name}}>
+                            </td>
+                            <td >
+                                <h5>{{s.goals.home}}-{{s.goals.away}}</h5>
+                            </td>
+                            <td >
+                                <img src={{s.teams.away.logo}} style="width:60px" alt="">
+                            </td>
+                            <td>
+                                {{s.teams.away.name}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            
+        </div>
+        <app-footer></app-footer>
+    </div>
+    
+</block-ui>

@@ -1,0 +1,58 @@
+
+:host ::ng-deep .w-100 {
+    width: 100%!important;
+}
+:host ::ng-deep .ngx-pagination {
+    padding: 10px;
+    background-color: rgba(84, 84, 84, 0.5);
+}
+:host ::ng-deep .ngx-pagination a, .ngx-pagination button {
+    color: white;
+}
+:host ::ng-deep a,p,span,div,input,button,td,tr,th,h1,h2,h3,h4,h5,h6{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+:host ::ng-deep body, html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
+
+:host ::ng-deep .ql-align-center{
+    text-align: center;
+    font-size: 16px;
+}
+:host ::ng-deep .ql-align-center span img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+:host ::ng-deep .ql-align-justify img{ 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+:host ::ng-deep .ql-align-center img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+@media screen and (max-width: 768px){
+    :host ::ng-deep .ql-align-center span img{
+        width: 96%;
+        text-align: center;
+    }
+    :host ::ng-deep .ql-align-justify img{
+        width: 96%;
+        text-align: center;
+    }
+    :host ::ng-deep .ql-align-center img{
+        width: 96%;
+        text-align: center;
+    }
+    :host ::ng-deep .ngx-pagination li {
+        color: white;
+    }
+}

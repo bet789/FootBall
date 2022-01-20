@@ -1,0 +1,106 @@
+<block-ui>
+    <div class="background">
+        <app-header></app-header>
+        <app-banner></app-banner>
+        <div id="div-con">
+            <div class="div1" style="font-family: 'Roboto';">LINK XEM BÓNG ĐÁ TRỰC TUYẾN TỐC ĐỘ CAO, TRỰC TIẾP BÓNG ĐÁ HÔM NAY</div>
+            <div id="divlistm">
+                <div class="bar2">
+                    <a href="#" >Trận hot!</a>
+                    <a href="javascript: void(0)" (click)="getFixtures()">Đang đá</a>           
+                    <a href="javascript: void(0)" (click)="loaddt()">Hôm nay</a>
+                    <a href="javascript: void(0)" (click)="getFixturesTomorrow()">Ngày mai</a> 
+                </div>
+                
+                <select>
+                    <option >Tất cả giải đấu</option>              
+                    <option >World Cup (World)</option>
+                    <option >UEFA Champions League (World)</option>
+                    <option >UEFA Europa League (World)</option>
+                    <option >Euro Championship (World)</option>
+                    <option >UEFA Nations League (World)</option>
+                    <option >Copa America (World)</option>
+                    <option >Premier League (England)</option>
+                    <option >FA Cup (England)</option>
+                    <option >Premier League Cup (England)</option>
+                    <option >Serie A (Italy)</option>
+                    <option >Coppa Italia (Italy)</option>
+                    <option >La Liga (Spain)</option>
+                    <option >Copa Del Rey (Spain)</option>
+                    <option >Bundesliga 1 (Germany)</option>
+                    <option >Super Cup (Germany)</option>
+                    <option >DFB Pokal (Germany)</option>
+                    <option >Ligue 1 (France)</option>
+                    <option >Coupe De France (France)</option>
+                    <option >AFC Champions League (World)</option>
+                    <option >AFC Cup (World)</option>
+                    <option >V.League 1 (Vietnam)</option>
+                    <option >V.League 2 (Vietnam)</option>
+                    <option >Cup (Vietnam)</option>
+                    <option >UEFA Super Cup (World)</option>
+                    <option >UEFA Europa Conference League (World)</option>
+                </select>
+            </div>
+       
+   
+            <div class="div3">
+                <div class="wrap2" *ngFor="let dt of datas">
+                    <div style="display: flex; margin: 10px;">
+                        <div id="divtt" style="text-align: left;"><span style="font-size: 16px; color: white; padding: 5px;">{{dt.league.name}}</span></div>
+                        <div id="divtt" style="text-align: right;"><span style="font-size: 16px; color: white; background-color: red; padding: 5px;">{{getDate(dt.fixture.timestamp)}}</span></div>
+                    </div>
+    
+                    <div style="display: flex; margin: 10px 0 0 7%; padding: 20px;">
+                        <div id="divtt2">
+                            <img src={{dt.teams.home.logo}} style="width: 80px; height: 80px;"><div></div>
+                            <span style="color: white;">{{dt.teams.home.name}}</span>
+                        </div>   
+                        <div style="padding-top: 30px; width: 140px;">
+                            <span style="background-color:rgb(10, 155, 10); padding: 5px; border-radius: 5px; color: white;">{{dt.fixture.status.long}} {{dt.fixture.status.elapsed}}</span><div style=" padding-top: 5px;"></div>
+                            <span style="font-size: 28px;font-weight: 700; color: white;">VS</span>
+                        </div>
+                        <div id="divtt2">
+                            <img src={{dt.teams.away.logo}} style="width: 80px; height: 80px;"><div></div>
+                            <span style="color: white;">{{dt.teams.away.name}}</span>
+                        </div>
+                    </div>
+    
+                    <div style="display: flex;">
+                        <a href="https://chuyendongsanco.com/" class="title">xem ngay</a>
+                        <a href="https://www.jun82.com/?uagt=bongda88&path=signup" class="title" id="att">Đặt cược</a>
+                    </div>
+                </div> 
+            </div>
+            <button type="button" (click)="getNextFixture()" class="btnreadmore">
+              Xem thêm
+            </button> 
+    
+    
+    
+    
+    
+            <div class="div1" >SOI KÈO <span style="color: limegreen;">BÓNG ĐÁ HÔM NAY</span></div>
+            <div class="div4">
+                <div class="wrap3" *ngFor="let prediction of predictions | slice: (pages-1) * pageSizes : (pages-1) * pageSizes + pageSizes">
+                    <a href="/soi-keo/{{prediction.slug}}"><img src={{prediction.image}} style="width: 100%; height: 220px;"></a> 
+                    <div style="margin-left: 10px;"><a href="/soi-keo/{{prediction.slug}}" class="titlea">{{prediction.title}}</a>  </div>           
+                </div> 
+            </div>                    
+        </div>
+
+        <app-hlvideo></app-hlvideo>
+
+        <div id="div-con" style="margin: 20px auto;">
+            <div class="div1" >TIN TỨC <span style="color: limegreen;">THỂ THAO</span></div>
+            <div class="div4">
+                <div class="wrap3" *ngFor="let news of newses | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                    <a href="/tin-tuc/{{news.slug}}"><img src={{news.image}} style="width: 100%; height: 220px;"></a> 
+                    <div style="margin-left: 10px;"><a href="/tin-tuc/{{news.slug}}" class="titlea" >{{news.title}}</a>  </div>           
+                </div>                      
+            </div>
+        </div>    
+        <app-footer></app-footer>   
+    </div>
+    
+</block-ui>
+

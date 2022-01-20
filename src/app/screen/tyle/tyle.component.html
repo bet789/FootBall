@@ -1,0 +1,43 @@
+<block-ui>
+    <div class="background">
+        <app-header></app-header>
+        <app-banner></app-banner>
+        <div id="div-con">
+            <div class="div1" >TỶ LỆ KÈO BÓNG ĐÁ CHÍNH XÁC TRƯỚC TRẬN ĐẤU</div>
+            <div class="div4">
+                <button class="btn" *ngFor="let bookmaker of bookmakers;">{{bookmaker.name}}</button>
+            </div>
+
+
+            <div *ngFor="let odd of odds | paginate: { itemsPerPage: 10, currentPage: page, totalItems: total }">
+                <h4 style="font-size: 22px; margin: 5px 0 0 10px; color: white;">
+                    <img src={{odd.league.flag}} alt={{odd.league.name}} style="width: 35px;"/> {{odd.league.country}}-{{odd.league.name}}
+                </h4>
+                <div *ngFor="let bookmarker of odd.bookmakers" >
+                    <h5 style="font-size: 18px;  margin: 5px 0 0 10px; color: white;">Nhà cái: <span style="color: #dc3545">{{bookmarker.name}}</span></h5>
+                    <div id="divtable">
+                        <table id="customers">
+                            <thead>
+                                <tr>
+                                    <th>Trận đấu</th>
+                                    <th *ngFor="let h of bookmarker.bets">{{h.name}}</th>
+                                </tr>
+                                
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id={{odd.fixture.id}}></td>
+                                    <td *ngFor="let bet of bookmarker.bets">
+                                        <p *ngFor="let v of bet.values">{{v.value}}-{{v.odd}}</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>          
+                </div>
+            </div>            
+        </div>
+        <app-footer></app-footer>
+    </div>
+</block-ui>
+
